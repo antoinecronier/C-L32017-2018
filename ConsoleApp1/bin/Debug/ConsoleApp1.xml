@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConsoleApp1</name>
+    </assembly>
+    <members>
+        <member name="T:ConsoleApp1.Model.Legume">
+            <summary>
+            Legume.
+            </summary>
+        </member>
+        <member name="P:ConsoleApp1.Model.Legume.Name">
+            <summary>
+            Name.
+            </summary>
+        </member>
+        <member name="P:ConsoleApp1.Model.Legume.Taille">
+            <summary>
+            Taille.
+            </summary>
+        </member>
+        <member name="M:ConsoleApp1.Model.Legume.#ctor(System.String,System.Int32)">
+            <summary>
+            Advance constructor
+            </summary>
+            <param name="name">Name.</param>
+            <param name="taille">Taille.</param>
+        </member>
+        <member name="M:ConsoleApp1.Model.Legume.Grandir">
+            <summary>
+            Grow up my turnip.
+            </summary>
+        </member>
+        <member name="M:ConsoleApp1.Model.Legume.Couper(System.Int32)">
+            <summary>
+            Cut the turnip if possible
+            </summary>
+            <param name="taille">Tall to cut</param>
+            <returns></returns>
+        </member>
+        <member name="T:ConsoleApp1.Model.Navet">
+            <summary>
+            Navet.
+            </summary>
+        </member>
+        <member name="M:ConsoleApp1.Model.Navet.#ctor(System.String,System.Int32)">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="T:ConsoleApp1.Model.Rutabaga">
+            <summary>
+            Rutabaga.
+            </summary>
+        </member>
+        <member name="P:ConsoleApp1.Model.Rutabaga.Consumption">
+            <summary>
+            Consumption.
+            </summary>
+        </member>
+        <member name="M:ConsoleApp1.Model.Rutabaga.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="name">Name.</param>
+            <param name="taille">Taille.</param>
+        </member>
+        <member name="T:ConsoleApp1.Program">
+            <summary>
+            Main class.
+            </summary>
+        </member>
+        <member name="M:ConsoleApp1.Program.Main(System.String[])">
+            <summary>
+            Entry point.
+            </summary>
+            <param name="args">Args values.</param>
+        </member>
+    </members>
+</doc>
