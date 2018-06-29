@@ -103,10 +103,21 @@ namespace ConsoleApp1
         public static async void TestWebService()
         {
             WebServiceManager<User> webServiceManager = new WebServiceManager<User>("https://jsonplaceholder.typicode.com/");
-            User toSet = await webServiceManager.HttpClientCaller<User>("https://jsonplaceholder.typicode.com/users/1");
+            User.Post toSet = await webServiceManager.HttpClientCaller<User.Post>("https://jsonplaceholder.typicode.com/posts/1");
             Console.WriteLine(toSet);
-            JObject obj = await webServiceManager.HttpClientCaller("https://jsonplaceholder.typicode.com/users/1");
-            Console.WriteLine(obj);
+
+            toSet = await webServiceManager.HttpClientSender<User.Post>("https://jsonplaceholder.typicode.com/posts", toSet);
+            Console.WriteLine(toSet);
+
+            toSet = await webServiceManager.HttpClientPuter<User.Post>("https://jsonplaceholder.typicode.com/posts/1", toSet);
+            Console.WriteLine(toSet);
+
+            await webServiceManager.HttpClientDeleter<User.Post, int>("https://jsonplaceholder.typicode.com/posts/1", toSet);
+            //int changes = await webServiceManager.HttpClientDeleter<User.Post,int>("https://jsonplaceholder.typicode.com/posts/1", toSet);
+            //Console.WriteLine(changes);
+
+            //JObject obj = await webServiceManager.HttpClientCaller("https://jsonplaceholder.typicode.com/users/1");
+            //Console.WriteLine(obj);
         }
     }
 }
