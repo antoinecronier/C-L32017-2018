@@ -1,4 +1,5 @@
-﻿using ConsoleApp1.Model;
+﻿using ConsoleApp1.Manager;
+using ConsoleApp1.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,12 @@ namespace ConsoleApp1
             }
 
             Object dicoVal = monDico["legume1"];
+
+            LegumeManager<Navet> navetManager = new LegumeManager<Navet>();
+            foreach (var item in navetManager.Cultiver())
+            {
+                Console.WriteLine(item.Name);
+            }
 
             Console.ReadLine();
         }
