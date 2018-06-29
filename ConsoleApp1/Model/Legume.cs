@@ -38,6 +38,11 @@ namespace ConsoleApp1.Model
             Taille = taille;
         }
 
+        public Legume()
+        {
+
+        }
+
         /// <summary>
         /// Grow up my turnip.
         /// </summary>

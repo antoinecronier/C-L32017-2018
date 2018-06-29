@@ -30,5 +30,10 @@ namespace ConsoleApp1.Model
         public Rutabaga(string name, int taille) : base(name, taille)
         {
         }
+
+        public Rutabaga()
+        {
+
+        }
     }
 }

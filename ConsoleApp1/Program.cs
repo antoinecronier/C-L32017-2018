@@ -1,5 +1,7 @@
 ﻿using ConsoleApp1.Manager;
 using ConsoleApp1.Model;
+using ConsoleApp1.WebService;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +20,16 @@ namespace ConsoleApp1
         /// </summary>
         /// <param name="args">Args values.</param>
         public static void Main(string[] args)
+        {
+            //TestLegume();
+
+            TestWebService();
+            //TestAsync();
+
+            Console.ReadLine();
+        }
+
+        private static void TestLegume()
         {
             Navet leBonNavet = new Navet("roger", 10);
             leBonNavet.Grandir();
@@ -64,8 +76,37 @@ namespace ConsoleApp1
             {
                 Console.WriteLine(item.Name);
             }
+        }
 
-            Console.ReadLine();
+        private static void TestAsync()
+        {
+            Action a1 = new Action(() =>
+            {
+                int i = 0;
+                while (true)
+                {
+                    Console.WriteLine(i);
+                    i++;
+                }
+            });
+
+            Func<int, int, Boolean> f1 = new Func<int, int, bool>((a, b) =>
+            {
+                return true;
+            });
+
+            f1.Invoke(1, 2);
+
+            Task.Factory.StartNew(a1);
+        }
+
+        public static async void TestWebService()
+        {
+            WebServiceManager<User> webServiceManager = new WebServiceManager<User>("https://jsonplaceholder.typicode.com/");
+            User toSet = await webServiceManager.HttpClientCaller<User>("https://jsonplaceholder.typicode.com/users/1");
+            Console.WriteLine(toSet);
+            JObject obj = await webServiceManager.HttpClientCaller("https://jsonplaceholder.typicode.com/users/1");
+            Console.WriteLine(obj);
         }
     }
 }
